@@ -1,0 +1,13 @@
+schema_version: "1.1"
+name: build-offline-profile-feature
+expected_outcome: |
+  Kotlin sources for an offline-first profile feature: Room entity/DAO as the local
+  source of truth, a Retrofit network data source with DTOs, a repository interface +
+  offline-first implementation that exposes Flow<UserProfile> read from Room and suspend
+  write functions, follow taps written locally first and synced via WorkManager (or an
+  equivalent persistent queue), DTO/entity mapped to an external model, injected
+  dispatchers/scopes; a @HiltViewModel exposing a single immutable UiState StateFlow built
+  with stateIn(WhileSubscribed(5000)), getting userId via navigation key/SavedStateHandle,
+  no Context or data sources in the ViewModel, no Channel events; a route composable using
+  collectAsStateWithLifecycle and a stateless screen composable; a Hilt module binding
+  the repository; and unit tests using fake repository/data sources.

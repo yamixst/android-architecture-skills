@@ -1,0 +1,15 @@
+schema_version: "1.1"
+name: review-legacy-news-feature
+context:
+  scaffold_script: place-files.sh
+expected_outcome: |
+  review.md lists the architecture violations in the legacy news feature with a priority
+  and a concrete fix for each: ViewModel talking to NewsApi/ArticleDao directly (no
+  repository), AndroidViewModel + Context/Toast/getString in the ViewModel, public
+  MutableStateFlows split into several loose flags instead of one immutable UiState,
+  Channel-based navigation events from the ViewModel, collectAsState instead of
+  collectAsStateWithLifecycle, ViewModel passed down to ArticleRow, UI mutating
+  article.isBookmarked, GlobalScope, hardcoded Dispatchers.IO, catch(Exception),
+  runBlocking + onResume override in MainActivity, object NewsRepository, DTOs reaching
+  the UI, no single source of truth. It proposes a target structure (repository with
+  data sources, Room as source of truth, UiState StateFlow, route/screen split, DI).

@@ -1,0 +1,14 @@
+schema_version: "1.1"
+name: refactor-login-event-channel
+context:
+  scaffold_script: place-files.sh
+expected_outcome: |
+  LoginViewModel no longer uses a Channel/SharedFlow for one-off events: navigation and
+  the error message are represented in a single immutable LoginUiState exposed as a
+  read-only StateFlow (or Compose state); the error is a resource id/enum resolved in
+  the UI rather than a string built from an injected Context; the UI collects with
+  collectAsStateWithLifecycle, navigates by reacting to state (e.g. LaunchedEffect on
+  isLoggedIn) and notifies the ViewModel once the message is shown; text input goes
+  through ViewModel functions instead of the UI writing MutableStateFlows; the catch
+  does not swallow CancellationException. CHANGES.md explains this with reference to
+  Google's "handle ViewModel events as state" guidance.
