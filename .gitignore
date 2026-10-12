@@ -1,2 +1,6 @@
 .firecrawl/
 *-workspace/
+# Local tooling used to collect sources; not part of the published skill
+.agents/skills/firecrawl/
+.claude/skills/firecrawl
+skills-lock.json
