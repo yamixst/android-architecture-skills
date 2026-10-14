@@ -4,3 +4,5 @@
 .agents/skills/firecrawl/
 .claude/skills/firecrawl
 skills-lock.json
+# Local copies of developer.android.com articles (reference only, not published)
+docs/
