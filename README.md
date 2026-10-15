@@ -55,3 +55,13 @@ only when the screen reopened (no WorkManager), and missed `collectAsState()` in
 Opus already knows the guidance; with the skill its reviews cite the official
 recommendation IDs/priorities. Results and HTML viewers:
 `skills/android-architecture-workspace/iteration-1*/` (gitignored).
+
+## License
+
+Apache License 2.0, see [LICENSE](LICENSE).
+
+The guidance in `skills/android-architecture/` is adapted from
+[Android Developers](https://developer.android.com/topic/architecture) documentation,
+© Google LLC, licensed under [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/)
+(code samples under Apache 2.0). See [NOTICE](NOTICE). This project is not affiliated
+with or endorsed by Google.

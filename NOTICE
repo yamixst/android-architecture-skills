@@ -1,0 +1,13 @@
+android-architecture-skills
+Copyright 2026 Mikhail Yatsenko
+
+This product includes material derived from Android Developers documentation
+(https://developer.android.com/topic/architecture and related pages),
+© Google LLC. That documentation is licensed under the Creative Commons
+Attribution 4.0 International License (https://creativecommons.org/licenses/by/4.0/),
+and its code samples under the Apache License 2.0
+(see https://developer.android.com/license).
+
+The files under skills/android-architecture/references/ summarize and adapt
+that documentation; they are not verbatim copies. This project is not
+affiliated with or endorsed by Google.
