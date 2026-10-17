@@ -33,16 +33,18 @@ Claude Code (project): symlink or copy the folder into `.claude/skills/`:
 ln -s ../../skills/android-architecture .claude/skills/android-architecture
 ```
 Other agents that read `.agents/skills/` (Codex, etc.): same into `.agents/skills/`.
-Both links already exist in this repository.
+Both links already exist in this repository (on Windows, enable
+`git config core.symlinks true` before cloning or copy the folder instead).
 
 Run the scanner on any Android project:
 ```bash
 python3 skills/android-architecture/scripts/audit_architecture.py path/to/project [--format json] [--min-severity medium]
 ```
 
-## Evaluation (iteration 1)
+## Evaluation (iteration 1, 2026-10-26)
 
-Three tasks, each run with and without the skill; pass rate = share of checks passed.
+Three tasks from `skills/android-architecture/evals/`, one run each with and without
+the skill; pass rate = share of grader checks passed.
 
 | Model | With skill | Without skill | Token overhead |
 |---|---|---|---|
@@ -53,8 +55,7 @@ Without the skill, Haiku kept a ViewModel → UI `Channel` for events (contrary 
 strongly-recommended rule), used `SharingStarted.Eagerly`, synced offline follow taps
 only when the screen reopened (no WorkManager), and missed `collectAsState()` in review.
 Opus already knows the guidance; with the skill its reviews cite the official
-recommendation IDs/priorities. Results and HTML viewers:
-`skills/android-architecture-workspace/iteration-1*/` (gitignored).
+recommendation IDs/priorities.
 
 ## License
 
